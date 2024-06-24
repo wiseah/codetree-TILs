@@ -7,9 +7,10 @@ def get_input():
 
 n, c, LDR, MBR = get_input()  # 함수 호출 및 변수 할당
 
-answer = 1 # 팀장은 무조건 1명이기 때문
+answer = 0 # 여기서 1이 아닌 이유는 각 팀마다 팀장이 1명씩이기 때문.(1로 정해버리면 팀 수에 상관없이 팀장이 총 1명이 되버림)
 for cust in c:
-    c2 = cust - LDR # 팀원이 검사해야할 고객 수 
+    c2 = cust - LDR  # 팀장이 처리한 후 남은 고객 수
+    answer += 1  # 팀장은 무조건 한 명 필요
     if c2 % MBR == 0:
         M = c2 // MBR  # 필요한 팀원 수 = 몫
         answer += M
