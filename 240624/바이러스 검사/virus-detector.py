@@ -7,19 +7,17 @@ def get_input():
 
 n, c, LDR, MBR = get_input()  # 함수 호출 및 변수 할당
 
-# c에서 LDR을 뺀 값을 c2에 저장
-c2 = [i - LDR for i in c]
-
-# 필요한 팀원 수를 계산하고 결과를 반환
-total_team_members = 0
-for value in c2:
-    if value % MBR == 0:
-        M = value // MBR  # 필요한 팀원 수 = 몫
+answer = 1 # 팀장은 무조건 1명이기 때문
+for cust in c:
+    c2 = cust - LDR # 팀원이 검사해야할 고객 수 
+    if c2 % MBR == 0:
+        M = c2 // MBR  # 필요한 팀원 수 = 몫
+        answer += M
     else:
-        M = (value // MBR) + 1  # 필요한 팀원 수 = 몫 + 1
-    total_team_members += (1 + M)
+        M = (c2 // MBR) + 1  # 필요한 팀원 수 = 몫 + 1
+        answer += M
 
-result = total_team_members * n
+result = answer
 
 # 결과 출력
 print(result)
