@@ -4,8 +4,10 @@
 |---|---|---|
 |[Intermediate Low / DP I / subproblem을 그대로 합치면 되는 DP](https://www.codetree.ai/missions?missionId=2)|40xp|![쉬움][easy]|
 
-
-
+# ✏️ 풀이 방식
+1. a와 b에 피보나치 수열의 첫 두 숫자를 초기화
+2. for문을 돌면서 a에는 b값이, b에는 a+b값을 대입
+3. n번째 피보나치 수를 구하는 것이므로 print(a)가 정답
 
 
 
